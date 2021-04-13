@@ -148,7 +148,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "ANYCUBIC Kossel"
+#define CUSTOM_MACHINE_NAME "Kossel"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -666,7 +666,7 @@
 
   #if ENABLED(DELTA_AUTO_CALIBRATION)
     // set the default number of probe points : n*n (1 -> 7)
-    #define DELTA_CALIBRATION_DEFAULT_POINTS 7
+    #define DELTA_CALIBRATION_DEFAULT_POINTS 4
   #endif
 
   #if EITHER(DELTA_AUTO_CALIBRATION, DELTA_CALIBRATION_MENU)
@@ -888,7 +888,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          2000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          1400    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -914,7 +914,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    100  // May be used by Linear Advance
+#define DEFAULT_EJERK    10  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -1128,7 +1128,7 @@
  *     O-- FRONT --+
  */
 #if ANYCUBIC_PROBE_VERSION == 2
-  #define NOZZLE_TO_PROBE_OFFSET { 0, 0, -16.8 }
+  #define NOZZLE_TO_PROBE_OFFSET { 0, 0, -15.8 }
 #elif ANYCUBIC_PROBE_VERSION == 1
   #define NOZZLE_TO_PROBE_OFFSET { 0, 0, -19.0 }
 #else
@@ -1137,7 +1137,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 15
+#define PROBING_MARGIN 25
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (100*60)
@@ -1661,7 +1661,7 @@
 
 #define PREHEAT_2_LABEL       "PETG"
 #define PREHEAT_2_TEMP_HOTEND 220
-#define PREHEAT_2_TEMP_BED    80
+#define PREHEAT_2_TEMP_BED    70
 #define PREHEAT_2_FAN_SPEED   90 // Value from 0 to 255
 
 /**
